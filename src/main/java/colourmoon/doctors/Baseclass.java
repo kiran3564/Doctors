@@ -13,10 +13,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Baseclass {
 
 	public WebDriver driver;
+	public Properties prop;
 	
 	public WebDriver browserinitialize() throws IOException
 	{
-		Properties prop = new Properties();
+		 prop = new Properties();
 		FileInputStream fis = new FileInputStream("C:\\Users\\DELL\\eclipse-workspace\\doctors\\src\\main\\java\\data.properties");
 		
 		prop.load(fis);												
@@ -26,7 +27,7 @@ public class Baseclass {
 
 		if(browserName.equals("chrome"))
 		{
-			 System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+			 System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\eclipse-workspace\\doctors\\drivers\\chromedriver.exe");
 			driver= new ChromeDriver();
 				//execute in chrome driver
 			
@@ -34,7 +35,7 @@ public class Baseclass {
 		else if (browserName.equals("firefox"))
 			
 		{
-			 System.setProperty("webdriver.gecko.driver", "C:\\geckodriver-v0.31.0-win32\\geckodriver.exe");
+			 System.setProperty("webdriver.gecko.driver", "C:\\Users\\DELL\\eclipse-workspace\\doctors\\drivers\\geckodriver.exe");
 			 driver= new FirefoxDriver();
 			//firefox code
 		}

@@ -5,7 +5,9 @@
     <classes>
       <class name="colourmoon.doctors.Homepage">
         <methods>
-          <include name="open"/>
+          <include name="teardown"/>
+          <include name="open" invocation-numbers="0"/>
+          <include name="opens"/>
         </methods>
       </class> <!-- colourmoon.doctors.Homepage -->
     </classes>
