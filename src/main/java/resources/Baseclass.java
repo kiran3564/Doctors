@@ -1,4 +1,4 @@
-package colourmoon.doctors;
+package resources;
 
 import java.io.File;
 import java.io.FileInputStream;

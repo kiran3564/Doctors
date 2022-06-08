@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import Pageobjects.Addlcation;
 import Pageobjects.Loginpage;
+import resources.Baseclass;
 
 public class Homepage extends Baseclass {
 	
@@ -24,7 +25,7 @@ public class Homepage extends Baseclass {
 		driver =browserinitialize();
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
-		Thread.sleep(5000);
+		
 	}
 	
 	
@@ -41,17 +42,24 @@ public class Homepage extends Baseclass {
 				ad.location().click();
 				ad.states().click();
 				ad.addnew().click();
-				Thread.sleep(1000);
-				ad.statename().sendKeys("kolkata");
+			    ad.statename().sendKeys("kolkata");
 		        ad.dropdown().click();
 		       ad.saves().click();
+		  
 
  
 	}
 	
 	
+@AfterTest
+public void teardown()
+{
+	driver.close();
+}
+
+	
 	@DataProvider
-	public Object[][] getdata() {
+	public Object[][] getdata() throws InterruptedException {
 		
 		Object[][] data = new Object[2][2];
 		
@@ -60,16 +68,12 @@ public class Homepage extends Baseclass {
 		
 		data[1][0]="admin";
 		data[1][1]="cmoon@123";
-		
 		return data;
+		
 	}
 	
-@AfterTest
 	
-	public void teardown()
-	{
-		driver.close();
-	}
 	
+
 }
 
